@@ -204,6 +204,7 @@ function updateStreamsList(cropsDir) {
     let array = [];
     let newAllStreams = [];
     for (let stream in streamsList) {
+      setTimeout(function() {
       let streamName = streamsList[stream].channel.display_name;
       const data = {
         streamName: streamName,
@@ -222,6 +223,7 @@ function updateStreamsList(cropsDir) {
         }).catch((error) => {
           console.log(error.message);
         });
+      }, 50);
     }
     setTimeout(function() {
       array.sort(function(a, b) {
